@@ -1,0 +1,132 @@
+/* ===== VARIÁVEIS: cores guardadas em um lugar só.
+   Para mudar o tema, basta alterar aqui. ===== */
+:root {
+  --cor-principal: #0b7285;
+  --cor-principal-escura: #095c6b;
+  --cor-fundo: #f1f5f9;
+  --cor-texto: #1e293b;
+  --cor-texto-suave: #64748b;
+  --cor-borda: #e2e8f0;
+  --branco: #ffffff;
+}
+
+/* ===== RESET: zera as margens padrão do navegador.
+   box-sizing faz o padding não aumentar o tamanho das caixas. ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BASE: fonte, fundo e cor do texto da página toda ===== */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+/* ===== LAYOUT: flex coloca menu e conteúdo lado a lado.
+   min-height deixa a página com a altura da tela inteira. ===== */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===== MENU LATERAL: coluna fixa de 230px à esquerda ===== */
+.sidebar {
+  width: 230px;
+  background: var(--cor-principal);
+  color: var(--branco);
+  padding: 20px 0;
+}
+
+.sidebar__logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 0 20px 20px;
+}
+
+/* Cada link do menu ocupa a linha toda (display: block) */
+.sidebar__menu a {
+  display: block;
+  padding: 12px 20px;
+  color: var(--branco);
+  text-decoration: none; /* tira o sublinhado */
+}
+
+/* Destaca o link quando passa o mouse ou quando é a página atual */
+.sidebar__menu a:hover,
+.sidebar__menu a.ativo {
+  background: var(--cor-principal-escura);
+}
+
+/* ===== ÁREA DE CONTEÚDO: flex: 1 ocupa o espaço que sobrou ===== */
+.conteudo {
+  flex: 1;
+}
+
+/* Cabeçalho: título à esquerda e usuário à direita */
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--branco);
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.topo__usuario {
+  color: var(--cor-texto-suave);
+}
+
+.principal {
+  padding: 24px;
+}
+
+/* ===== CARDS: grid cria colunas automáticas.
+   Cada card tem no mínimo 180px e o resto se ajusta à tela. ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* Cada card: número em cima e título embaixo */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--branco);
+  padding: 20px;
+  border-radius: 8px; /* cantos arredondados */
+  border: 1px solid var(--cor-borda);
+}
+
+.card__numero {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--cor-principal);
+}
+
+.card__titulo {
+  color: var(--cor-texto-suave);
+}
+
+/* ===== PAINEL: caixa branca para listas e tabelas ===== */
+.painel {
+  background: var(--branco);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--cor-borda);
+}
+
+.painel h2 {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+/* Texto cinza para mensagens de "lista vazia" */
+.vazio {
+  color: var(--cor-texto-suave);
+}

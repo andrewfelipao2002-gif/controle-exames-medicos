@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- Diz ao navegador que este é um documento HTML5 -->
+<html lang="pt-BR">
+<head>
+  <!-- Permite acentos e caracteres especiais -->
+  <meta charset="UTF-8">
+  <!-- Faz a página se ajustar à tela do celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Título que aparece na aba do navegador -->
+  <title>Painel | Controle de Exames Médicos</title>
+  <!-- Liga o arquivo de estilos (CSS) à página -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Container geral: coloca o menu e o conteúdo lado a lado -->
+  <div class="layout">
+
+    <!-- MENU LATERAL: links para as telas do sistema -->
+    <aside class="sidebar">
+      <div class="sidebar__logo">🩺 ExamesMed</div>
+      <nav class="sidebar__menu">
+        <!-- A classe "ativo" destaca a página em que estamos -->
+        <a href="index.html" class="ativo">Painel</a>
+        <a href="pages/pacientes.html">Pacientes</a>
+        <a href="pages/requisicoes.html">Requisições</a>
+        <a href="pages/agendamentos.html">Agendamentos</a>
+        <a href="pages/checkin.html">Check-in</a>
+        <a href="pages/exames.html">Exames</a>
+        <a href="pages/laudos.html">Laudos</a>
+        <a href="pages/cadastros.html">Cadastros</a>
+      </nav>
+    </aside>
+
+    <!-- ÁREA DA DIREITA: cabeçalho + conteúdo da página -->
+    <div class="conteudo">
+      <!-- Cabeçalho com o título da tela e o usuário -->
+      <header class="topo">
+        <h1>Painel</h1>
+        <span class="topo__usuario">Olá, Recepção</span>
+      </header>
+
+      <!-- Conteúdo principal da página -->
+      <main class="principal">
+
+        <!-- Cards com os totais  -->
+        <section class="cards">
+          <div class="card">
+            <span class="card__numero">0</span>
+            <span class="card__titulo">Agendados</span>
+          </div>
+          <div class="card">
+            <span class="card__numero">0</span>
+            <span class="card__titulo">Confirmados</span>
+          </div>
+          <div class="card">
+            <span class="card__numero">0</span>
+            <span class="card__titulo">Em análise</span>
+          </div>
+          <div class="card">
+            <span class="card__numero">0</span>
+            <span class="card__titulo">Resultados liberados</span>
+          </div>
+        </section>
+
+        <!-- Caixa da lista de agendamentos  -->
+        <section class="painel">
+          <h2>Próximos agendamentos</h2>
+          <p class="vazio">Nenhum agendamento ainda.</p>
+        </section>
+
+      </main>
+    </div>
+
+  </div>
+</body>
+</html>
