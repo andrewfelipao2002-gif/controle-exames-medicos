@@ -130,3 +130,110 @@ body {
 .vazio {
   color: var(--cor-texto-suave);
 }
+/* ===== ESPAÇO ENTRE PAINÉIS: dá distância quando há mais de um na página ===== */
+.painel + .painel {
+  margin-top: 24px;
+}
+
+/* ===== FORMULÁRIO: grid com colunas automáticas, igual aos cards ===== */
+.formulario {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* Cada campo: texto em cima e input embaixo */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+}
+
+/* Estilo comum de todos os inputs (texto, data e busca) */
+.campo input,
+.busca {
+  padding: 10px 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Destaque quando o campo está selecionado */
+.campo input:focus,
+.busca:focus {
+  outline: 2px solid var(--cor-principal);
+  border-color: transparent;
+}
+
+/* Linha dos botões ocupa a largura toda do grid (de coluna 1 até a última) */
+.formulario__acoes {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 10px;
+}
+
+/* ===== BOTÕES ===== */
+.botao {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background: var(--cor-principal);
+  color: var(--branco);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: var(--cor-principal-escura);
+}
+
+/* Variação cinza: usada no botão "Limpar" */
+.botao--cinza {
+  background: var(--cor-texto-suave);
+}
+
+/* ===== BUSCA ===== */
+.busca {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* ===== TABELA ===== */
+.tabela-wrapper {
+  overflow-x: auto; /* rolagem horizontal em telas pequenas */
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse; /* junta as bordas das células */
+}
+
+.tabela th,
+.tabela td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.tabela th {
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+}
+/* ===== BOTÃO EXCLUIR: variação vermelha e menor ===== */
+.botao--perigo {
+  background: #c92a2a;
+}
+
+.botao--perigo:hover {
+  background: #a61e1e;
+}
+
+.botao--pequeno {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}

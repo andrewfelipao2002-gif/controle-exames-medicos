@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pacientes | Controle de Exames Médicos</title>
+  <!-- Estamos dentro da pasta "pages", então "../" sobe um nível para achar o css -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="layout">
+
+    <!-- MENU LATERAL: igual ao do painel, só muda o link "ativo" e o "../" nos caminhos -->
+    <aside class="sidebar">
+      <div class="sidebar__logo">🩺 ExamesMed</div>
+      <nav class="sidebar__menu">
+        <a href="../index.html">Painel</a>
+        <a href="pacientes.html" class="ativo">Pacientes</a>
+        <a href="requisicoes.html">Requisições</a>
+        <a href="agendamentos.html">Agendamentos</a>
+        <a href="checkin.html">Check-in</a>
+        <a href="exames.html">Exames</a>
+        <a href="laudos.html">Laudos</a>
+        <a href="cadastros.html">Cadastros</a>
+      </nav>
+    </aside>
+
+    <div class="conteudo">
+      <header class="topo">
+        <h1>Pacientes</h1>
+        <span class="topo__usuario">Olá, Recepção</span>
+      </header>
+
+      <main class="principal">
+
+        <!-- FORMULÁRIO: campos baseados na tabela tbPessoas do DER -->
+        <section class="painel">
+          <h2>Cadastrar paciente</h2>
+
+          <form id="form-paciente" class="formulario">
+            <!-- "label for" liga o texto ao campo com o mesmo id (clicar no texto foca o campo) -->
+            <div class="campo">
+              <label for="nome">Nome completo</label>
+              <input type="text" id="nome" required>
+            </div>
+
+            <div class="campo">
+              <label for="cpf">CPF</label>
+              <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14" required>
+            </div>
+
+            <div class="campo">
+              <label for="nascimento">Data de nascimento</label>
+              <input type="text" id="nascimento" placeholder="dd/mm/aaaa" maxlength="10" inputmode="numeric" required>
+            </div>
+
+            <div class="campo">
+              <label for="telefone">Telefone</label>
+              <input type="text" id="telefone" placeholder="(85) 90000-0000" maxlength="15">
+            </div>
+
+            <!-- Botões: "submit" envia o formulário; "reset" limpa os campos -->
+            <div class="formulario__acoes">
+              <button type="submit" class="botao">Salvar</button>
+              <button type="reset" class="botao botao--cinza">Limpar</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- LISTA: a tabela começa vazia; o JS vai preencher o <tbody> -->
+        <section class="painel">
+          <h2>Pacientes cadastrados</h2>
+
+          <!-- Campo de busca (o JS vai filtrar a tabela por ele) -->
+          <input type="search" id="busca" class="busca" placeholder="Buscar por nome ou CPF">
+
+          <!-- tabela-wrapper permite rolar de lado em telas pequenas -->
+          <div class="tabela-wrapper">
+            <table class="tabela">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>CPF</th>
+                  <th>Nascimento</th>
+                  <th>Telefone</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="lista-pacientes"></tbody>
+            </table>
+          </div>
+
+          <p id="mensagem-vazia" class="vazio">Nenhum paciente cadastrado.</p>
+        </section>
+
+      </main>
+    </div>
+
+  </div>
+    <!-- Carrega o JavaScript da página (fica no final para o HTML já existir quando ele rodar) -->
+  <script src="../js/pacientes.js"></script>
+</body>
+</html>
