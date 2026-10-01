@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamentos | Controle de Exames Médicos</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="layout">
+
+    <!-- MENU LATERAL: o link "ativo" agora é o de Agendamentos -->
+    <aside class="sidebar">
+      <div class="sidebar__logo">🩺 ExamesMed</div>
+      <nav class="sidebar__menu">
+        <a href="../index.html">Painel</a>
+        <a href="pacientes.html">Pacientes</a>
+        <a href="requisicoes.html">Requisições</a>
+        <a href="agendamentos.html" class="ativo">Agendamentos</a>
+        <a href="checkin.html">Check-in</a>
+        <a href="exames.html">Exames</a>
+        <a href="laudos.html">Laudos</a>
+        <a href="cadastros.html">Cadastros</a>
+      </nav>
+    </aside>
+
+    <div class="conteudo">
+      <header class="topo">
+        <h1>Agendamentos</h1>
+        <span class="topo__usuario">Olá, Recepção</span>
+      </header>
+
+      <main class="principal">
+
+        <!-- Aviso que o JS mostra quando faltam cadastros (começa escondido) -->
+        <div id="aviso-cadastros" class="aviso" hidden></div>
+
+        <!-- ===== FORMULÁRIO: campos baseados na tabela tbAgendaMedica do DER ===== -->
+        <section class="painel">
+          <h2>Novo agendamento</h2>
+
+          <form id="form-agendamento" class="formulario">
+
+            <!-- <select> é uma lista de opções; o JS preenche as <option> de cada uma -->
+            <div class="campo">
+              <label for="paciente">Paciente</label>
+              <select id="paciente" required></select>
+            </div>
+
+            <div class="campo">
+              <label for="medico">Médico solicitante</label>
+              <select id="medico" required></select>
+            </div>
+
+            <div class="campo">
+              <label for="local">Local</label>
+              <select id="local" required></select>
+            </div>
+
+            <div class="campo">
+              <label for="tipo">Tipo de exame</label>
+              <select id="tipo" required></select>
+            </div>
+
+            <div class="campo">
+              <label for="data">Data</label>
+              <input type="text" id="data" placeholder="dd/mm/aaaa" maxlength="10" inputmode="numeric" required>
+            </div>
+
+            <div class="campo">
+              <label for="hora-inicio">Hora de início</label>
+              <input type="text" id="hora-inicio" placeholder="hh:mm" maxlength="5" inputmode="numeric" required>
+            </div>
+
+            <div class="campo">
+              <label for="hora-fim">Hora de fim</label>
+              <input type="text" id="hora-fim" placeholder="hh:mm" maxlength="5" inputmode="numeric" required>
+            </div>
+
+            <div class="campo">
+              <label for="observacao">Observação (opcional)</label>
+              <input type="text" id="observacao" maxlength="255">
+            </div>
+
+            <div class="formulario__acoes">
+              <button type="submit" class="botao">Agendar</button>
+              <button type="reset" class="botao botao--cinza">Limpar</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- ===== LISTA DE AGENDAMENTOS COM BUSCA E FILTRO ===== -->
+        <section class="painel">
+          <h2>Agendamentos marcados</h2>
+
+          <!-- Filtros: busca por texto e por data -->
+          <div class="filtros">
+            <input type="search" id="busca" class="busca" placeholder="Buscar por paciente, médico ou exame">
+            <input type="text" id="filtro-data" class="busca" placeholder="Filtrar por data (dd/mm/aaaa)" maxlength="10" inputmode="numeric">
+          </div>
+
+          <div class="tabela-wrapper">
+            <table class="tabela">
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Horário</th>
+                  <th>Paciente</th>
+                  <th>Médico</th>
+                  <th>Exame</th>
+                  <th>Local</th>
+                  <th>Observação</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="lista-agendamentos"></tbody>
+            </table>
+          </div>
+
+          <p id="vazio-agendamentos" class="vazio">Nenhum agendamento marcado.</p>
+        </section>
+
+      </main>
+    </div>
+
+  </div>
+    <!-- Carrega o JavaScript da página -->
+  <script src="../js/agendamentos.js"></script>
+</body>
+</html>

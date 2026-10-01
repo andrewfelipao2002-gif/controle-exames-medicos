@@ -241,3 +241,51 @@ body {
 .formulario + .tabela-wrapper {
   margin-top: 20px;
 }
+/* ===== SELECT: mesmo visual dos inputs ===== */
+.campo select {
+  padding: 10px 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  font-size: 1rem;
+  background: var(--branco);
+}
+
+.campo select:focus {
+  outline: 2px solid var(--cor-principal);
+  border-color: transparent;
+}
+
+/* ===== FILTROS: busca e data lado a lado (quebra para baixo em telas pequenas) ===== */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* Dentro dos filtros, cada campo divide o espaço; a data é um pouco menor */
+.filtros .busca {
+  flex: 2;
+  min-width: 220px;
+  margin-bottom: 0;
+}
+
+.filtros .busca + .busca {
+  flex: 1;
+}
+
+/* ===== AVISO: faixa amarela para mensagens importantes ===== */
+.aviso {
+  background: #fff3bf;
+  border: 1px solid #fcc419;
+  color: #664d03;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+/* O atributo "hidden" esconde o aviso, mas o display acima o mostraria de novo;
+   esta regra garante que "hidden" continue valendo */
+.aviso[hidden] {
+  display: none;
+}
