@@ -117,3 +117,15 @@ iniciarCadastro({
   campoTexto: 'nome',
   nomeItem: 'tipo de exame',
 });
+
+// ===== USO 3: MÉDICOS (simplificação do medico_id do DER) =====
+iniciarCadastro({
+  chave: 'medicos',
+  idFormulario: 'form-medico',
+  idCampo: 'nome-medico',
+  idLista: 'lista-medicos',
+  idVazio: 'vazio-medicos',
+  campoId: 'medico_id',
+  campoTexto: 'nome',
+  nomeItem: 'médico',
+});

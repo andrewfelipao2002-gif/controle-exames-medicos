@@ -89,6 +89,33 @@
           </div>
           <p id="vazio-tipos" class="vazio">Nenhum tipo de exame cadastrado.</p>
         </section>
+                <!-- ===== PAINEL 3: MÉDICOS (simplificação do medico_id do DER) ===== -->
+        <section class="painel">
+          <h2>Médicos solicitantes</h2>
+
+          <form id="form-medico" class="formulario">
+            <div class="campo">
+              <label for="nome-medico">Nome do médico</label>
+              <input type="text" id="nome-medico" placeholder="Ex.: Dra. Ana Souza" required>
+            </div>
+            <div class="formulario__acoes">
+              <button type="submit" class="botao">Salvar médico</button>
+            </div>
+          </form>
+
+          <div class="tabela-wrapper">
+            <table class="tabela">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="lista-medicos"></tbody>
+            </table>
+          </div>
+          <p id="vazio-medicos" class="vazio">Nenhum médico cadastrado.</p>
+        </section>
 
       </main>
     </div>
