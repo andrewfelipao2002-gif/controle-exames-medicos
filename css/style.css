@@ -237,3 +237,7 @@ body {
   padding: 6px 12px;
   font-size: 0.85rem;
 }
+/* ===== ESPAÇO ENTRE O FORMULÁRIO E A TABELA, nas telas com formulário + lista ===== */
+.formulario + .tabela-wrapper {
+  margin-top: 20px;
+}

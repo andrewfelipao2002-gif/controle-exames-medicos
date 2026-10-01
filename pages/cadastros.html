@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastros | Controle de Exames Médicos</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="layout">
+
+    <!-- MENU LATERAL: o link "ativo" agora é o de Cadastros -->
+    <aside class="sidebar">
+      <div class="sidebar__logo">🩺 ExamesMed</div>
+      <nav class="sidebar__menu">
+        <a href="../index.html">Painel</a>
+        <a href="pacientes.html">Pacientes</a>
+        <a href="requisicoes.html">Requisições</a>
+        <a href="agendamentos.html">Agendamentos</a>
+        <a href="checkin.html">Check-in</a>
+        <a href="exames.html">Exames</a>
+        <a href="laudos.html">Laudos</a>
+        <a href="cadastros.html" class="ativo">Cadastros</a>
+      </nav>
+    </aside>
+
+    <div class="conteudo">
+      <header class="topo">
+        <h1>Cadastros</h1>
+        <span class="topo__usuario">Olá, Recepção</span>
+      </header>
+
+      <main class="principal">
+
+        <!-- ===== PAINEL 1: LOCAIS (tabela tbLocal do DER) ===== -->
+        <section class="painel">
+          <h2>Locais</h2>
+
+          <!-- Formulário de um campo só: a descrição do local -->
+          <form id="form-local" class="formulario">
+            <div class="campo">
+              <label for="descricao-local">Descrição do local</label>
+              <input type="text" id="descricao-local" placeholder="Ex.: Sala de Coleta 1" required>
+            </div>
+            <div class="formulario__acoes">
+              <button type="submit" class="botao">Salvar local</button>
+            </div>
+          </form>
+
+          <!-- Tabela de locais: o JS preenche o <tbody> -->
+          <div class="tabela-wrapper">
+            <table class="tabela">
+              <thead>
+                <tr>
+                  <th>Descrição</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="lista-locais"></tbody>
+            </table>
+          </div>
+          <p id="vazio-locais" class="vazio">Nenhum local cadastrado.</p>
+        </section>
+
+        <!-- ===== PAINEL 2: TIPOS DE EXAME (tabela tbTipoAgendaMedica do DER) ===== -->
+        <section class="painel">
+          <h2>Tipos de exame</h2>
+
+          <form id="form-tipo" class="formulario">
+            <div class="campo">
+              <label for="nome-tipo">Nome do tipo</label>
+              <input type="text" id="nome-tipo" placeholder="Ex.: Hemograma, Raio-X" required>
+            </div>
+            <div class="formulario__acoes">
+              <button type="submit" class="botao">Salvar tipo</button>
+            </div>
+          </form>
+
+          <div class="tabela-wrapper">
+            <table class="tabela">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="lista-tipos"></tbody>
+            </table>
+          </div>
+          <p id="vazio-tipos" class="vazio">Nenhum tipo de exame cadastrado.</p>
+        </section>
+
+      </main>
+    </div>
+
+  </div>
+    <!-- Carrega o JavaScript da página -->
+  <script src="../js/cadastros.js"></script>
+</body>
+</html>
